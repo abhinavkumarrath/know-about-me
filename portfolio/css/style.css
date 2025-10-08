@@ -181,15 +181,24 @@ section {
 
 .project-card {
     background-color: var(--card-bg);
-    border-radius: 10px;
     overflow: hidden;
     border: 1px solid var(--border-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-bottom: 2px solid var(--primary-color);
+    border-radius: 10px 10px 0 0;
 }
 
 .project-card-content {

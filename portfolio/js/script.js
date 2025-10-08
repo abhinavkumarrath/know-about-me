@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         projectCard.classList.add('project-card');
 
                         projectCard.innerHTML = `
+                            <img src="previews/projects/${repo.name}/${repo.name}.jpg" alt="${repo.name} preview">
                             <div class="project-card-content">
                                 <h3>${repo.name}</h3>
                                 <p>${repo.description || 'No description available.'}</p>
