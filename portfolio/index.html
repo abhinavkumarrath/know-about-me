@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,28 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhinav Kumar Rath - Cyber Security Enthusiast</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">AKR</a>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <section id="home">
-        <div class="hero">
-            <h1 class="name-animation">Abhinav Kumar Rath</h1>
-            <p class="subtitle"><span id="typing-effect"></span></p>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Abhinav Kumar Rath</h1>
+                <p class="subtitle"><span id="typing-effect"></span></p>
+                <a href="#projects" class="cta-button">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/abhinavkumarrath.jpg" alt="Abhinav Kumar Rath">
+                </div>
+                <div class="about-text">
+                    <p>
+                        Hello! I'm Abhinav Kumar Rath, a passionate cyber security enthusiast currently studying at the Gyan Ganga Institute of Technology and Science. I'm dedicated to learning how to protect computers and networks from digital threats.
+                    </p>
+                    <p>
+                        My journey into technology began with coding in Python, C++, and C. This foundation helps me understand the inner workings of web applications, a crucial aspect of cyber security. I'm proficient in HTML, CSS, and JavaScript, which allows me to both build and analyze web applications.
+                    </p>
+                    <p>
+                        I thrive on solving complex problems and am always exploring the latest security trends and tools. I'm eager to apply my skills to real-world projects and contribute to a safer digital world.
+                    </p>
+                </div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card"><i class="fab fa-python"></i><p>Python</p></div>
+                <div class="skill-card"><i class="fab fa-html5"></i><p>HTML5</p></div>
+                <div class="skill-card"><i class="fab fa-css3-alt"></i><p>CSS3</p></div>
+                <div class="skill-card"><i class="fab fa-js-square"></i><p>JavaScript</p></div>
+                <div class="skill-card"><i class="fas fa-shield-alt"></i><p>Security</p></div>
+                <div class="skill-card"><i class="fas fa-network-wired"></i><p>Networking</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div id="projects-container" class="projects-grid">
+                <!-- GitHub projects will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-form">
+                <form action="https://formspree.io/f/your_form_id" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Abhinav Kumar Rath. All rights reserved.</p>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/abhinavkumarrath" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/abhinav-kumar-rath-5a5825297/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:abhinavkumarrath2@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2025 Abhinav Kumar Rath. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="js/script.js"></script>
