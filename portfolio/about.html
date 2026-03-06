@@ -2,12 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Abhinav Kumar Rath</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="glow-blob"></div><div id="noise"></div>
+    <div id="glow-blob"></div>
+    <div id="noise"></div>
+    
     <nav class="navbar fade-up">
         <div class="nav-brand">AKR.</div>
         <div class="nav-links">
@@ -18,26 +25,48 @@
             <a href="contact.html">Contact</a>
         </div>
     </nav>
-    <div class="container fade-up">
-        <div class="hero-split">
+
+    <div class="container fade-up" style="margin-top: 5rem;">
+        
+        <div class="hero-split" style="align-items: flex-start;">
+            
             <div class="hero-text">
-                <h1>The Expert.</h1>
-                <p class="bio">
-                 Hello! I'm Abhinav Kumar Rath, a cybersecurity enthusiast and systems programmer studying at the Gyan Ganga Institute of Technology and Science. I am driven by a deep curiosity for how systems operate at their core—and how to secure them against advanced digital threats.
+                <h1 style="font-size: 3.5rem; margin-bottom: 1.5rem;">The Expert.</h1>
+                
+                <div class="bio" style="margin-bottom: 2.5rem; line-height: 1.7;">
+                    <p style="margin-bottom: 1rem;">Hello! I'm Abhinav Kumar Rath, a cybersecurity enthusiast and systems programmer studying at the Gyan Ganga Institute of Technology and Science. I am driven by a deep curiosity for how systems operate at their core—and how to secure them against advanced digital threats.</p>
 
-My foundation is built on C, C++, Python, and shell scripting. While I understand web architecture for vulnerability analysis, my true passion lies in system architecture, Linux administration, and algorithmic problem-solving.
+                    <p style="margin-bottom: 1rem;">My foundation is built on C, C++, Python, and shell scripting. While I understand web architecture for vulnerability analysis, my true passion lies in system architecture, Linux administration, and algorithmic problem-solving.</p>
 
-As an Expert-rated competitive programmer on Codeforces, I thrive under pressure, optimizing code and breaking down complex logical puzzles. Whether I'm exploring new security tools or configuring custom Linux environments, I am always building and eager to engineer a safer digital world.
-                 </p>
-             
+                    <p>As an Expert-rated competitive programmer on Codeforces, I thrive under pressure, optimizing code and breaking down complex logical puzzles. Whether I'm exploring new security tools or configuring custom Linux environments, I am always building and eager to engineer a safer digital world.</p>
+                </div>
+                
+                <div class="social-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    
+                    <a href="https://codeforces.com/profile/abhinavkumarrath" target="_blank" class="glass-card social-card" style="text-decoration: none; text-align: center; padding: 2rem 1.5rem;">
+                        <i class="fas fa-chart-bar" style="color: #1f8acb; font-size: 2.5rem; margin-bottom: 1rem;"></i>
+                        <h3>Codeforces</h3>
+                        <p style="margin-top: 0.5rem; opacity: 0.8; color: var(--text-main);">Expert (1609)</p>
+                    </a>
+
+                    <a href="https://leetcode.com/u/WlJu8sfz36/" target="_blank" class="glass-card social-card" style="text-decoration: none; text-align: center; padding: 2rem 1.5rem;">
+                        <i class="fas fa-code" style="color: #ffa116; font-size: 2.5rem; margin-bottom: 1rem;"></i>
+                        <h3>LeetCode</h3>
+                        <p style="margin-top: 0.5rem; opacity: 0.8; color: var(--text-main);">Algorithmic Vault</p>
+                    </a>
+
+                </div>
             </div>
-            <div class="hero-image-container glass-card">
+
+            <div class="hero-image-container glass-card" style="padding: 1rem; margin-top: 5.5rem;">
                 <div class="profile-ring">
                     <img src="abhinav.jpg" alt="Abhinav Kumar Rath" class="profile-pic">
                 </div>
             </div>
+
         </div>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
