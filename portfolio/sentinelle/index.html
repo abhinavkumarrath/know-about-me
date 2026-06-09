@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinelle | Mission Control Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .glow-red {
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-red-500 selection:text-black">
+
+    <nav class="border-b border-slate-800 bg-slate-900/50 backdrop-blur-md px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+        <div class="flex items-center space-x-3">
+            <div class="h-3 w-3 rounded-full bg-red-500 animate-pulse"></div>
+            <span class="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r #text-red-400 to-amber-500">
+                SENTINELLE <span class="text-xs font-normal text-slate-500">v4.1</span>
+            </span>
+        </div>
+        <div class="flex items-center space-x-6 text-sm">
+            <div class="text-slate-400">
+                System Status: <span class="text-emerald-400 font-semibold">ONLINE</span>
+            </div>
+            <a href="../index.html" class="text-slate-400 hover:text-white transition-colors">
+                <i class="fa-solid fa-arrow-left mr-2"></i>Back to Portfolio
+            </a>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto p-6 space-y-6">
+        
+        <div class="bg-gradient-to-r from-slate-900 to-slate-950 border border-slate-800 rounded-xl p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+                <h1 class="text-2xl font-bold text-white">Mission Operations Center</h1>
+                <p class="text-slate-400 text-sm mt-1">Autonomous Fall Detection & Critical Distress Telemetry Pipeline</p>
+            </div>
+            <div class="flex flex-wrap gap-3">
+                <span class="bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-md text-xs text-slate-300">
+                    <i class="fa-solid fa-microchip text-cyan-400 mr-2"></i>Node: ESP32-DevKitC
+                </span>
+                <span class="bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-md text-xs text-slate-300">
+                    <i class="fa-solid fa-shield-halved text-amber-400 mr-2"></i>Security: SMT-Backed
+                </span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-3">
+                <div class="text-slate-500 text-xs font-semibold tracking-wider uppercase">Active Edge Node</div>
+                <div class="flex items-center justify-between">
+                    <span id="ui-device-id" class="text-sm font-bold text-white">Sentinelle_ESP32_PoC_4.1</span>
+                    <i class="fa-solid fa-network-wired text-slate-500 text-lg"></i>
+                </div>
+            </div>
+
+            <div id="status-card" class="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-3 transition-all duration-300">
+                <div class="text-slate-500 text-xs font-semibold tracking-wider uppercase">Current Alert State</div>
+                <div class="flex items-center justify-between">
+                    <span id="ui-alert-type" class="text-lg font-bold text-emerald-400">NOMINAL</span>
+                    <i id="status-icon" class="fa-solid fa-circle-check text-emerald-500 text-lg"></i>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-3">
+                <div class="text-slate-500 text-xs font-semibold tracking-wider uppercase">Battery Capacity</div>
+                <div class="flex items-center justify-between">
+                    <span id="ui-battery" class="text-2xl font-bold text-white">100%</span>
+                    <i id="ui-battery-icon" class="fa-solid fa-battery-full text-emerald-400 text-xl"></i>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-3">
+                <div class="text-slate-500 text-xs font-semibold tracking-wider uppercase">Active Uplink Layer</div>
+                <div class="flex items-center justify-between">
+                    <span id="ui-network" class="text-sm font-bold text-slate-300">WIFI_PRIMARY</span>
+                    <span class="text-xs bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/20 font-bold">LINK ACTIVE</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            
+            <div class="lg:col-span-1 bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col justify-between min-h-[320px]">
+                <div>
+                    <h3 class="text-md font-bold text-white mb-4">
+                        <i class="fa-solid fa-location-crosshairs text-red-500 mr-2"></i>GPS Localization
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 border border-slate-800/60 p-3 rounded-lg flex justify-between items-center">
+                            <span class="text-xs text-slate-500">LATITUDE</span>
+                            <span id="ui-lat" class="text-sm font-bold text-slate-300 font-mono">23.1815</span>
+                        </div>
+                        <div class="bg-slate-950 border border-slate-800/60 p-3 rounded-lg flex justify-between items-center">
+                            <span class="text-xs text-slate-500">LONGITUDE</span>
+                            <span id="ui-lng" class="text-sm font-bold text-slate-300 font-mono">79.9864</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4 bg-slate-950 border border-slate-800 p-4 rounded-lg text-center text-xs text-slate-500 flex flex-col items-center justify-center space-y-2 h-28">
+                    <i class="fa-solid fa-map-location-dot text-2xl text-slate-700 animate-bounce"></i>
+                    <span>Telemetry stream bound to static Node coordinates.</span>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2 bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col min-h-[320px]">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-md font-bold text-white">
+                        <i class="fa-solid fa-terminal text-amber-500 mr-2"></i>Live Telemetry Stream
+                    </h3>
+                    <span class="text-[10px] text-slate-500 bg-slate-950 px-2 py-1 rounded border border-slate-800 font-mono">STATION: GGITS_JBP</span>
+                </div>
+                
+                <div id="terminal-log" class="flex-grow bg-slate-950 border border-slate-800 rounded-lg p-4 font-mono text-xs text-slate-400 space-y-2.5 overflow-y-auto max-h-[240px]">
+                    <div class="text-slate-500">[2026-06-09 08:42:00] Initializing telemetry stream listeners...</div>
+                    <div class="text-emerald-500">[SYSTEM] Secure websocket client initialized successfully. Awaiting payload.</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Trigger simulated emergency update to show off UI transitions
+        setTimeout(() => {
+            updateDashboard({
+                device_id: "Sentinelle_ESP32_PoC_4.1",
+                alert_type: "CRITICAL_SOS",
+                battery_status: 42,
+                gps_coordinates: { lat: 23.1815, lng: 79.9864 },
+                network_protocol: "WIFI_PRIMARY",
+                timestamp: new Date().toISOString()
+            });
+        }, 4000);
+
+        function updateDashboard(payload) {
+            // Update Text Node Elements
+            document.getElementById('ui-device-id').innerText = payload.device_id;
+            document.getElementById('ui-alert-type').innerText = payload.alert_type;
+            document.getElementById('ui-battery').innerText = payload.battery_status + "%";
+            document.getElementById('ui-network').innerText = payload.network_protocol;
+            document.getElementById('ui-lat').innerText = payload.gps_coordinates.lat.toFixed(4);
+            document.getElementById('ui-lng').innerText = payload.gps_coordinates.lng.toFixed(4);
+
+            // Dynamically Handle Battery Icons & Threshold Warnings
+            const battIcon = document.getElementById('ui-battery-icon');
+            if (payload.battery_status <= 20) {
+                battIcon.className = "fa-solid fa-battery-quarter text-red-500 animate-pulse";
+            } else if (payload.battery_status <= 50) {
+                battIcon.className = "fa-solid fa-battery-half text-amber-400";
+            } else {
+                battIcon.className = "fa-solid fa-battery-full text-emerald-400";
+            }
+
+            // Dynamically Handle Distress Alert State Graphics & Text
+            const statusCard = document.getElementById('status-card');
+            const statusIcon = document.getElementById('status-icon');
+            const alertText = document.getElementById('ui-alert-type');
+
+            if (payload.alert_type !== "NOMINAL") {
+                statusCard.className = "bg-red-950/40 border border-red-800/80 rounded-xl p-5 space-y-3 glow-red";
+                alertText.className = "text-lg font-bold text-red-500 animate-pulse";
+                statusIcon.className = "fa-solid fa-triangle-exclamation text-red-500 text-lg animate-bounce";
+            }
+
+            // Log event output beautifully to our mock terminal viewport window
+            const logBox = document.getElementById('terminal-log');
+            const timestamp = new Date(payload.timestamp).toLocaleTimeString();
+            
+            const logEntry = document.createElement('div');
+            logEntry.className = "text-red-400 font-bold border-l-2 border-red-500 pl-2 py-0.5 bg-red-950/20 my-1";
+            logEntry.innerHTML = `[${timestamp}] CRITICAL ALERT PACKET RECEIVED FROM DEV_ID: ${payload.device_id}<br>` + 
+                                  `<span class="text-slate-500 font-normal">↳ TYPE: ${payload.alert_type} | BATTERY: ${payload.battery_status}% | LAT: ${payload.gps_coordinates.lat} LNG: ${payload.gps_coordinates.lng}</span>`;
+            
+            logBox.appendChild(logEntry);
+            logBox.scrollTop = logBox.scrollHeight;
+        }
+    </script>
+</body>
+</html>
