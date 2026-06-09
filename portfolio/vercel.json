@@ -1,16 +1,16 @@
-{
+c{
   "rewrites": [
     {
       "source": "/sentinelle",
-      "destination": "https://sentinelle.vercel.app"
+      "destination": "https://onyx-sentinelle.vercel.app"
     },
     {
       "source": "/sentinelle/:path*",
-      "destination": "https://sentinelle.vercel.app/:path*"
+      "destination": "https://onyx-sentinelle.vercel.app/:path*"
     },
     {
       "source": "/api/sentinelle",
-      "destination": "https://sentinelle.vercel.app/api/alert"
+      "destination": "https://onyx-sentinelle.vercel.app/api/alert"
     }
   ]
 }
