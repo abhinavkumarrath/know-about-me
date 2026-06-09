@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/sentinelle",
+      "destination": "https://sentinelle.vercel.app"
+    },
+    {
+      "source": "/sentinelle/:path*",
+      "destination": "https://sentinelle.vercel.app/:path*"
+    },
+    {
+      "source": "/api/sentinelle",
+      "destination": "https://sentinelle.vercel.app/api/alert"
+    }
+  ]
+}
