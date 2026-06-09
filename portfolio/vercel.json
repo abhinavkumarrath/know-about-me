@@ -2,15 +2,15 @@
   "rewrites": [
     {
       "source": "/sentinelle",
-      "destination": "https://onyx-sentinelle.vercel.app/"
+      "destination": "https://onyx-sentinelle.vercel.app/sentinelle"
     },
     {
       "source": "/sentinelle/:path*",
-      "destination": "https://onyx-sentinelle.vercel.app/:path*"
+      "destination": "https://onyx-sentinelle.vercel.app/sentinelle/:path*"
     },
     {
-      "source": "/api/sentinelle",
-      "destination": "https://onyx-sentinelle.vercel.app/api/alert"
+      "source": "/_next/:path*",
+      "destination": "https://onyx-sentinelle.vercel.app/sentinelle/_next/:path*"
     }
   ]
 }
