@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/sentinelle",
-      "destination": "https://onyx-sentinelle.vercel.app"
+      "destination": "https://onyx-sentinelle.vercel.app/"
     },
     {
       "source": "/sentinelle/:path*",
