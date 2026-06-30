@@ -12,5 +12,10 @@
       "source": "/_next/:path*",
       "destination": "https://onyx-sentinelle.vercel.app/sentinelle/_next/:path*"
     }
+  
+    { "source": "/openday/:path*",
+      "destination": "https://openday-ggits.vercel.app//:path*" 
+    }
+
   ]
 }
