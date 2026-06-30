@@ -1,11 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/openday",
-      "destination": "/openday/",
-      "permanent": true
-    }
-  ],
   "rewrites": [
     {
       "source": "/sentinelle",
